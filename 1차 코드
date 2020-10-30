@@ -1,21 +1,22 @@
 #include <iostream>
 using namespace std;
-#define N_UNIT    100
-#define ATTACK_UNIT   1
-#define PROTECT_UNIT  2
-class GameUnit 
+#define N_UNIT    100 //게임유닛 100으로 지정
+#define ATTACK_UNIT   1 //공격유닛 1로 지정 
+#define PROTECT_UNIT  2 //방어 유닛 2으로 지정
+class GameUnit //GameUnit 클래스 지정, 가상함수 Display, DoAciton 순수 가상함수
 {
 public:
 	virtual void Display(int x, int y) = 0;
 	virtual void DoAction() = 0;
 };
-class AttackUnit : public GameUnit
+class AttackUnit : public GameUnit //AttackUnit 클래스, GameUnit에 상속, Display, DoAction 오버라이딩
 {
 public:
 	void Display(int x, int y) {}
 	void DoAction() {}
 };
-class ProtectUnit : public GameUnit 
+class ProtectUnit : public GameUnit  //ProtectUnit 클래스, GameUnit에 상속, Display, DoAction 오버라이딩
+{
 {
 public:
 	void Display(int x, int y) {}
@@ -25,3 +26,5 @@ public:
 // Global Variable 
 // ------------------------
 GameUnit *pUnitArray[N_UNIT];
+
+//출처 : https://github.com/CppKorea/DesignPattern/blob/2020/master/Singleton/Singleton/Singleton2.cpp
