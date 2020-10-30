@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+#define N_UNIT    100
+#define ATTACK_UNIT   1
+#define PROTECT_UNIT  2
+class GameUnit 
+{
+public:
+	virtual void Display(int x, int y) = 0;
+	virtual void DoAction() = 0;
+};
+class AttackUnit : public GameUnit
+{
+public:
+	void Display(int x, int y) {}
+	void DoAction() {}
+};
+class ProtectUnit : public GameUnit 
+{
+public:
+	void Display(int x, int y) {}
+	void DoAction() {}
+};
+// ------------------------
+// Global Variable 
+// ------------------------
+GameUnit *pUnitArray[N_UNIT];
