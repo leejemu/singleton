@@ -1,0 +1,15 @@
+void main()
+{
+	InitUnitArray();
+
+	GameUnit *pUnit1 = CreateNewUnit(ATTACK_UNIT);
+	if (pUnit1 == 0)
+		cout << "No More Create Unit" << endl;
+
+	GameUnit *pUnit2 = CreateNewUnit(PROTECT_UNIT);
+	if (pUnit2 == 0)
+		cout << "No More Create Unit" << endl;
+
+	DestroyUnit(pUnit1);
+	DestroyUnit(pUnit2);
+}
