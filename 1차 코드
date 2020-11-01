@@ -9,22 +9,22 @@ public:
 	virtual void Display(int x, int y) = 0;
 	virtual void DoAction() = 0;
 };
-class AttackUnit : public GameUnit //AttackUnit 클래스, GameUnit에 상속, Display, DoAction 오버라이딩
+class AttackUnit : public GameUnit //AttackUnit 클래스, GameUnit에 상속, Display, DoAction
 {
 public:
-	void Display(int x, int y) {}
-	void DoAction() {}
+	void Display(int x, int y) {} //어택 유닛 진열
+	void DoAction() {} //어택 유닛 행동
 };
 class ProtectUnit : public GameUnit  //ProtectUnit 클래스, GameUnit에 상속, Display, DoAction 오버라이딩
 {
 {
 public:
-	void Display(int x, int y) {}
-	void DoAction() {}
+	void Display(int x, int y) {} //프로텍트유닛 진열
+	void DoAction() {} // 프로텍트 유닛 행동
 };
 // ------------------------
-// Global Variable 
+// Global Variable //전역지역
 // ------------------------
-GameUnit *pUnitArray[N_UNIT];
+GameUnit *pUnitArray[N_UNIT]; 게임유닛 객체 배열 N_UNIT 즉 100으로 지정
 
 //출처 : https://github.com/CppKorea/DesignPattern/blob/2020/master/Singleton/Singleton/Singleton2.cpp
